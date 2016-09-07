@@ -20,7 +20,6 @@ $RECYCLE.BIN/
 # =========================
 # Operating System Files
 # =========================
-*.bat
 *.exe
 
 # =========================
@@ -61,4 +60,3 @@ lib
 Network Trash Folder
 Temporary Items
 .apdisk
-gradlew

@@ -1,0 +1,16 @@
+[
+{
+  "modid": "sbe",
+  "name": "Sounds By Example",
+  "description": "A compilation of things I learned about using sound and music in Minecraft",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Aeronica"],
+  "credits": "The Forge and FML guys, The Minecraft Modding Community",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
