@@ -30,6 +30,8 @@ $RECYCLE.BIN/
 .settings
 .gradle
 .launch
+.gitattributes
+.gitignore
 
 bin
 build
