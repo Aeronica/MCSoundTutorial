@@ -1,7 +1,9 @@
 /*
 ** User: Paul Boese aka Aeronica
-** Date: Sep 8, 2016
+** Date: Sep 10, 2016
 **
+** Based on MinecraftByExample by TheGreyGhost and others
+** https://github.com/TheGreyGhost/MinecraftByExample
 */
 package soundsbyexample;
 
