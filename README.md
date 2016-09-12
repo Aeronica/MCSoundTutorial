@@ -5,7 +5,7 @@ This is being done in the same format as [MineCraftByExmaple][MBE] that [TheGrey
 
 `WIP`
 ## List of Examples
-  - [SBE01][01]
+  - [SBE01][01] - basic sound - an item, that when activated emits a sound, which only the player can hear.
   
 ### Resources
   - [Forge Sound Documentation][ForgeSoundDocs]
