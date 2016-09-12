@@ -1,0 +1,14 @@
+{
+	"sbe01_sound_event_basic_sound_registry_name": 
+	{
+		"category": "player",
+		"subtitle": "sounds.sbe01_sound_event_basic_sound.subtitle",
+		"sounds": 
+		[
+			{
+				"name": "soundsbyexample:sbe01_sound_event_basic_sound",
+				"stream": false
+			}
+		]
+	}
+}
