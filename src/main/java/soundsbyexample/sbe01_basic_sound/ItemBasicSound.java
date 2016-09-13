@@ -2,6 +2,7 @@ package soundsbyexample.sbe01_basic_sound;
 
 import java.util.List;
 
+import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -41,7 +42,18 @@ public class ItemBasicSound extends Item
             ** Client Side
             ** Only the player activating this item will hear a sound
             **/
-           playerIn.playSound(StartupCommon.soundEventBasicSound, 1.0F, 1.0F);  
+           ((EntityPlayerSP)playerIn).playSound(StartupCommon.soundEventBasicSound, 1.0F, 1.0F);
+           
+           /**
+            ** This EntityPlayer version works the same in 1.10.2 as the EntityPlayerSP
+            ** version unlike what the docs say at
+            ** http://mcforge.readthedocs.io/en/latest/effects/sounds/
+            ** According to the docs this does nothing on the client. I have not tested
+            ** this in 1.9 so the docs were probably correct at the time. The moral of the
+            ** story is to test and verify yourself. Read the sources if in doubt.
+            **/
+//           playerIn.playSound(StartupCommon.soundEventBasicSound, 1.0F, 1.0F);
+           
        }
         return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
     }
