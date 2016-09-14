@@ -13,6 +13,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import soundsbyexample.SoundsByExample;
 
 import java.util.List;
 
@@ -42,7 +43,7 @@ public class AllSbeItemsTab extends CreativeTabs
         {
             if (item != null)
             {
-                if (item.getUnlocalizedName().contains(".sbe"))
+                if (item.getUnlocalizedName().contains(SoundsByExample.MODID))
                 {
                     /** add all sub items to the list */
                     item.getSubItems(item, this, itemsToShowOnTab);

@@ -1,8 +1,8 @@
 # SoundsByExample en_US.lang
 #
 # sbe01 Basic Sound - Client Only
-item.sbe01_item_basic_sound_unlocalised_name.name=SBE01 Basic Sound
-item.sbe01_item_basic_sound_unlocalised_name.tooltip=Only the player activating this item will hear a sound
+item.soundsbyexample:sbe01_item_basic_sound_unlocalised_name.name=SBE01 Basic Sound
+item.soundsbyexample:sbe01_item_basic_sound_unlocalised_name.tooltip=Only the player activating this item will hear a sound
 sounds.sbe01_sound_event_basic_sound.subtitle=SBE01 Basic Sound Subtitle
 #
 # sbe02 Mod Record

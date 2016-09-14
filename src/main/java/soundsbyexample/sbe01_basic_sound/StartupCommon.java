@@ -40,8 +40,7 @@ public class StartupCommon
         /**
          ** BasicSound demonstration item
          */
-        itemBasicSound = (ItemBasicSound)(new ItemBasicSound().setUnlocalizedName("sbe01_item_basic_sound_unlocalised_name"));
-        itemBasicSound.setRegistryName("sbe01_item_basic_sound_registry_name");
+        itemBasicSound = (ItemBasicSound)(new ItemBasicSound("sbe01_item_basic_sound_unlocalised_name"));
         GameRegistry.register(itemBasicSound);
 
     }

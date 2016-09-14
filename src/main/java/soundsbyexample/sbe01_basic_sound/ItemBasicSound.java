@@ -20,18 +20,22 @@ import net.minecraft.world.World;
 **
 ** Based on MinecraftByExample by TheGreyGhost and others
 ** https://github.com/TheGreyGhost/MinecraftByExample
+**
+** The items .lang file identifiers will be in the format of:
+** item.modid:mod_item_unlocalized_name.name=Localized Item Name
+** item.modid:mod_item_unlocalized_name.tooltip=Localized Item Tooltip Description
 */
 public class ItemBasicSound extends Item
 {
 
-    public ItemBasicSound()
+    public ItemBasicSound(String unlocalizedName)
     {
+        setItemName(this, unlocalizedName);
         this.setMaxDamage(0);
         this.setHasSubtypes(false);
         this.setMaxStackSize(1);
         this.setCreativeTab(CreativeTabs.MISC);
     }
-
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand)
@@ -63,6 +67,21 @@ public class ItemBasicSound extends Item
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced)
     {
         tooltip.add(TextFormatting.GOLD + I18n.format(this.getUnlocalizedName() + ".tooltip"));
+    }
+
+    /**
+     * Set the registry name of {@code item} to {@code itemName} and the unlocalized name to the full registry name.<br>
+     *
+     * @author Choonster
+     * @param item     The item
+     * @param itemName The item's name
+     */
+    public static void setItemName(Item item, String itemName)
+    {
+        item.setRegistryName(itemName);
+        item.setUnlocalizedName(item.getRegistryName().toString());
+        System.out.println("ItemModRecord RegistryName:    " + itemName);
+        System.out.println("ItemModRecord UnlocalizedName: " + item.getRegistryName().toString());
     }
 
 }
