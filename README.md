@@ -18,3 +18,10 @@ This is being done in the same format as [MineCraftByExmaple][MBE] that [TheGrey
 [SoundJsonVanillaWiki]: http://minecraft.gamepedia.com/Sounds.json
 
 [01]: https://github.com/Aeronica/SoundsByExample/tree/master/src/main/java/soundsbyexample/sbe01_basic_sound
+
+## Resource File Licenses
+  - [Creative Commons Attribution-Share Alike 3.0 Unported][CCSAU]
+  - Pachelbel's_Canon.ogg Pachelbel's canon in D, Piano transcription, performed by  by [Lee Galloway][LGWEB]
+  
+[CCSAU]: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+[LGWEB]: http://www.LeeGalloway.com/
