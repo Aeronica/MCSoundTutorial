@@ -5,5 +5,9 @@ item.sbe01_item_basic_sound_unlocalised_name.name=SBE01 Basic Sound
 item.sbe01_item_basic_sound_unlocalised_name.tooltip=Only the player activating this item will hear a sound
 sounds.sbe01_sound_event_basic_sound.subtitle=SBE01 Basic Sound Subtitle
 #
+# sbe02 Mod Record
+item.soundsbyexample:sbe02_item_mod_record_unlocalized_name.name=SBE02 Mod Music Disc
+item.record.soundsbyexample:sbe02_item_mod_record_unlocalized_name.desc=SEB02 Mod Record Description
+#
 # sbe91 SBE Creative Tab
 itemGroup.sbe91_creative_tab_all_SBE=All SBE items and blocks

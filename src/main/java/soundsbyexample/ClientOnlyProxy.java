@@ -30,6 +30,7 @@ public class ClientOnlyProxy extends CommonProxy
         super.preInit();
         soundsbyexample.sbe90_configuration.StartupClientOnly.preInitClientOnly();
         soundsbyexample.sbe01_basic_sound.StartupClientOnly.preInitClientOnly();
+        soundsbyexample.sbe02_mod_record.StartupClientOnly.preInitClientOnly();
         soundsbyexample.sbe91_creative_tab.StartupClientOnly.preInitClientOnly();
     }
 
@@ -42,6 +43,7 @@ public class ClientOnlyProxy extends CommonProxy
         super.init();
         soundsbyexample.sbe90_configuration.StartupClientOnly.initClientOnly();
         soundsbyexample.sbe01_basic_sound.StartupClientOnly.initClientOnly();
+        soundsbyexample.sbe02_mod_record.StartupClientOnly.initClientOnly();
         soundsbyexample.sbe91_creative_tab.StartupClientOnly.initClientOnly();
     }
 
@@ -53,6 +55,7 @@ public class ClientOnlyProxy extends CommonProxy
         super.postInit();
         soundsbyexample.sbe90_configuration.StartupClientOnly.postInitClientOnly();
         soundsbyexample.sbe01_basic_sound.StartupClientOnly.postInitClientOnly();
+        soundsbyexample.sbe02_mod_record.StartupClientOnly.postInitClientOnly();
         soundsbyexample.sbe91_creative_tab.StartupClientOnly.postInitClientOnly();
     }
 

@@ -10,5 +10,16 @@
 				"stream": false
 			}
 		]
+	},
+	"record.sbe02_sound_event_mod_record_registry_name":
+	{
+		"category": "records",
+		"sounds":
+		[
+			{
+			"name": "soundsbyexample:records/sbe02_sound_event_mod_record",
+			"stream": true
+			}
+		]
 	}
 }
