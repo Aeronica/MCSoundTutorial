@@ -4,11 +4,11 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 
 /*
-** User: Paul Boese aka Aeronica
-** Date: Sep 14, 2016
-**
-** Based on MinecraftByExample by TheGreyGhost and others
-** https://github.com/TheGreyGhost/MinecraftByExample
+* User: Paul Boese aka Aeronica
+* Date: Sep 14, 2016
+*
+* Based on MinecraftByExample by TheGreyGhost and others
+* https://github.com/TheGreyGhost/MinecraftByExample
 */
 public class StartupClientOnly
 {

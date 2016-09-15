@@ -1,9 +1,9 @@
 /*
-** User: Paul Boese aka Aeronica
-** Date: Sep 10, 2016
-**
-** Based on MinecraftByExample by TheGreyGhost and others
-** https://github.com/TheGreyGhost/MinecraftByExample
+* User: Paul Boese aka Aeronica
+* Date: Sep 10, 2016
+*
+* Based on MinecraftByExample by TheGreyGhost and others
+* https://github.com/TheGreyGhost/MinecraftByExample
 */
 package soundsbyexample;
 
@@ -21,7 +21,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
  */
 public class ClientOnlyProxy extends CommonProxy
 {
-    /**
+    /*
      * Run before anything else. Read your config, create blocks, items, etc,
      * and register them with the GameRegistry
      */

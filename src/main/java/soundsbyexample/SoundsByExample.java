@@ -1,10 +1,3 @@
-/*
-** User: Paul Boese aka Aeronica
-** Date: Sep 10, 2016
-**
-** Based on MinecraftByExample by TheGreyGhost and others
-** https://github.com/TheGreyGhost/MinecraftByExample
-*/
 package soundsbyexample;
 
 import net.minecraftforge.fml.common.Mod;
@@ -14,6 +7,13 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
+/*
+* User: Paul Boese aka Aeronica
+* Date: Sep 10, 2016
+*
+* Based on MinecraftByExample by TheGreyGhost and others
+* https://github.com/TheGreyGhost/MinecraftByExample
+*/
 @Mod(modid = SoundsByExample.MODID, version = SoundsByExample.VERSION, guiFactory = SoundsByExample.GUIFACTORY)
 public class SoundsByExample
 {

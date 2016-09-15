@@ -15,19 +15,20 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 /*
-** User: Paul Boese aka Aeronica
-** Date: Sep 11, 2016
-**
-** Based on MinecraftByExample by TheGreyGhost and others
-** https://github.com/TheGreyGhost/MinecraftByExample
-**
-** The items .lang file identifiers will be in the format of:
-** item.modid:mod_item_unlocalized_name.name=Localized Item Name
-** item.modid:mod_item_unlocalized_name.tooltip=Localized Item Tooltip Description
+* User: Paul Boese aka Aeronica
+* Date: Sep 11, 2016
+*
+* Based on MinecraftByExample by TheGreyGhost and others
+* https://github.com/TheGreyGhost/MinecraftByExample
 */
 public class ItemBasicSound extends Item
 {
 
+    /*
+    * The items .lang file identifiers will be in the format of:
+    * item.modid:mod_item_unlocalized_name.name=Localized Item Name
+    * item.modid:mod_item_unlocalized_name.tooltip=Localized Item Tooltip Description
+    */
     public ItemBasicSound(String unlocalizedName)
     {
         setItemName(this, unlocalizedName);
@@ -42,20 +43,20 @@ public class ItemBasicSound extends Item
     {
        if (worldIn.isRemote)
        {
-           /**
-            ** Client Side
-            ** Only the player activating this item will hear a sound
-            **/
+           /*
+            * Client Side
+            * Only the player activating this item will hear a sound
+            */
            ((EntityPlayerSP)playerIn).playSound(StartupCommon.soundEventBasicSound, 1.0F, 1.0F);
            
-           /**
-            ** This EntityPlayer version works the same in 1.10.2 as the EntityPlayerSP
-            ** version unlike what the docs say at
-            ** http://mcforge.readthedocs.io/en/latest/effects/sounds/
-            ** According to the docs this does nothing on the client. I have not tested
-            ** this in 1.9 so the docs were probably correct at the time. The moral of the
-            ** story is to test and verify yourself. Read the sources if in doubt.
-            **/
+           /*
+            * This EntityPlayer version works the same in 1.10.2 as the EntityPlayerSP
+            * version unlike what the docs say at
+            * http://mcforge.readthedocs.io/en/latest/effects/sounds/
+            * According to the docs this does nothing on the client. I have not tested
+            * this in 1.9 so the docs were probably correct at the time. The moral of the
+            * story is to test and verify yourself. Read the sources if in doubt.
+            */
 //           playerIn.playSound(StartupCommon.soundEventBasicSound, 1.0F, 1.0F);
            
        }
@@ -70,7 +71,7 @@ public class ItemBasicSound extends Item
     }
 
     /**
-     * Set the registry name of {@code item} to {@code itemName} and the unlocalized name to the full registry name.<br>
+     * Set the registry name of {@code item} to {@code itemName} and the unlocalized name to the full registry name.
      *
      * @author Choonster
      * @param item     The item

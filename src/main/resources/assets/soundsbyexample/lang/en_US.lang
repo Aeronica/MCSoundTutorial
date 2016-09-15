@@ -7,7 +7,7 @@ sounds.sbe01_sound_event_basic_sound.subtitle=SBE01 Basic Sound Subtitle
 #
 # sbe02 Mod Record
 item.soundsbyexample:sbe02_item_mod_record_unlocalized_name.name=SBE02 Mod Music Disc
-item.record.soundsbyexample:sbe02_item_mod_record_unlocalized_name.desc=SEB02 Pachelbel's canon in D
+item.record.soundsbyexample:sbe02_item_mod_record_unlocalized_name.desc=Pachelbel's canon in D
 #
 # sbe91 SBE Creative Tab
 itemGroup.sbe91_creative_tab_all_SBE=All SBE items and blocks
