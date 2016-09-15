@@ -80,8 +80,6 @@ public class ItemBasicSound extends Item
     {
         item.setRegistryName(itemName);
         item.setUnlocalizedName(item.getRegistryName().toString());
-        System.out.println("ItemModRecord RegistryName:    " + itemName);
-        System.out.println("ItemModRecord UnlocalizedName: " + item.getRegistryName().toString());
     }
 
 }
