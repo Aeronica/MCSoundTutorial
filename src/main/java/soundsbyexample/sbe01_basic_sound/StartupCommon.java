@@ -3,6 +3,7 @@ package soundsbyexample.sbe01_basic_sound;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import soundsbyexample.SoundsByExample;
 
 /*
 * User: Paul Boese aka Aeronica
@@ -13,29 +14,32 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 */
 public class StartupCommon
 {
+    
     /*
-     * The sound event must be available on the client and the server
-     * For this example we will only use it on the client side just to keep it simple.
+     * The sound event must be available on the client and the server.
      *
-     * soundEventBasicSound is the handle to the SoundEvemt we need to pass to the
-     * any of available vanilla sound methods 
+     * soundEventBasicSound is what we need to pass to the to any of available vanilla sound methods.
+     * One is needed for each of the sounds the MOD will add.
      */
     public static SoundEvent soundEventBasicSound;
     
-    /*
-     * BasicSound demonstration item
-     */
+    
+    /* BasicSound demonstration item */
     public static ItemBasicSound itemBasicSound;
     
     public static void preInitCommon()
     {        
         /* 
-         * As of Minecraft 1.9 your mods sound events must be registered in the game registry.
+         * As of Minecraft 1.9 and Forge with the new Forge registry system, your mods sound events
+         * must be registered in the game registry.
          *
-         * First we set the resource location of our sound. This will correspond with the
-         * attributes for our mods sound in the assets/<modid>/sounds.json file.
+         * First we set the resource location of our sound. Pass in the MODID and the NAME for the sound.
+         * This NAME must match the entry for our sound in the assets/<modid>/sounds.json file.
          */
-        final ResourceLocation soundID = new ResourceLocation("soundsbyexample:sbe01_sound_event_basic_sound_registry_name");
+        ResourceLocation soundID = new ResourceLocation(SoundsByExample.MODID, "sbe01_sound_event_basic_sound_NAME");
+        /*
+         * Second we register the sound using the Forge registry system. It returns a SoundEvent for this SoundID
+         */
         soundEventBasicSound = GameRegistry.register(new SoundEvent(soundID).setRegistryName(soundID));
 
         /*
@@ -43,7 +47,6 @@ public class StartupCommon
          */
         itemBasicSound = (ItemBasicSound)(new ItemBasicSound("sbe01_item_basic_sound_unlocalised_name"));
         GameRegistry.register(itemBasicSound);
-
     }
 
     public static void initCommon()
@@ -53,4 +56,5 @@ public class StartupCommon
     public static void postInitCommon()
     {
     }
+    
 }

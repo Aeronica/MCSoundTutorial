@@ -1,0 +1,27 @@
+SBE01_BASIC_SOUND
+
+The purpose of this example is to show how to register a sound and play it.
+It will show you
+1) the location of the sounds.json file and standard location for a mods sound
+   files.
+2) how to register sounds and reference them.
+3) some examples of how to play sounds. For this example an and item with
+   subtypes is used.
+4) using subtitles
+
+The critical aspects, as with items and blocks, are understanding how to use a
+ResourceLocation and where in the mods assets tree the sounds.json and the mods
+audio files are located.
+
+The pieces you need to understand are located in:
+StartupCommon
+ItemBasicSound
+src/main/resources/assets/soundsbyexample/sounds.json
+src/main/resources/assets/soundsbyexample/lang/en_US.lang
+
+The items will appear in the Miscellaneous tab in the creative inventory.
+
+For further information:
+-Forge Documentation Sound http://mcforge.readthedocs.io/en/latest/effects/sounds/
+-Vanilla WIKI sounds.json http://minecraft.gamepedia.com/Sounds.json
+-Choonster's testmod3 ModSoundEvents.java https://github.com/Choonster/TestMod3/blob/1.10.2/src/main/java/choonster/testmod3/init/ModSoundEvents.java

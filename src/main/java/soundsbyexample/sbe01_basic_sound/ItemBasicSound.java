@@ -2,7 +2,6 @@ package soundsbyexample.sbe01_basic_sound;
 
 import java.util.List;
 
-import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,6 +10,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.IStringSerializable;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
@@ -33,7 +34,7 @@ public class ItemBasicSound extends Item
     {
         setItemName(this, unlocalizedName);
         this.setMaxDamage(0);
-        this.setHasSubtypes(false);
+        this.setHasSubtypes(true);
         this.setMaxStackSize(1);
         this.setCreativeTab(CreativeTabs.MISC);
     }
@@ -41,25 +42,36 @@ public class ItemBasicSound extends Item
     @Override
     public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand)
     {
-       if (worldIn.isRemote)
-       {
-           /*
-            * Client Side
-            * Only the player activating this item will hear a sound
-            */
-           ((EntityPlayerSP)playerIn).playSound(StartupCommon.soundEventBasicSound, 1.0F, 1.0F);
-           
-           /*
-            * This EntityPlayer version works the same in 1.10.2 as the EntityPlayerSP
-            * version unlike what the docs say at
-            * http://mcforge.readthedocs.io/en/latest/effects/sounds/
-            * According to the docs this does nothing on the client. I have not tested
-            * this in 1.9 so the docs were probably correct at the time. The moral of the
-            * story is to test and verify yourself. Read the sources if in doubt.
-            */
-//           playerIn.playSound(StartupCommon.soundEventBasicSound, 1.0F, 1.0F);
-           
-       }
+        EnumBasicSounds enumBasicSound = EnumBasicSounds.byMetadata(itemStackIn.getItemDamage());
+        if (worldIn.isRemote)
+        {
+            /* Client Side */
+            switch (enumBasicSound)
+            {
+            case CLIENT_PLAYER_ONLY:
+                /* Only the player activating this item will hear a sound */
+                playerIn.playSound(StartupCommon.soundEventBasicSound, 1F, 1F);
+                break;
+            default:
+                break;
+            }
+        }  else
+        {
+            /* Server Side */
+            switch (EnumBasicSounds.byMetadata(itemStackIn.getItemDamage()))
+            {
+            case SERVER_ALL:
+                /* Plays a sound to everyone around this player including the player */
+                worldIn.playSound(null, playerIn.posX, playerIn.posY, playerIn.posZ, StartupCommon.soundEventBasicSound, SoundCategory.PLAYERS, 1F, 1F);
+                break;
+            case SERVER_OTHERS:
+                /* Plays a sound to everyone except the player */
+                playerIn.playSound(StartupCommon.soundEventBasicSound, 1F, 1F);
+                break;
+            default:
+                break;
+            }
+        }       
         return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
     }
 
@@ -67,7 +79,7 @@ public class ItemBasicSound extends Item
     @Override
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced)
     {
-        tooltip.add(TextFormatting.GOLD + I18n.format(this.getUnlocalizedName() + ".tooltip"));
+        tooltip.add(TextFormatting.GOLD + I18n.format(this.getUnlocalizedName(stack) + ".tooltip"));
     }
 
     /**
@@ -81,6 +93,66 @@ public class ItemBasicSound extends Item
     {
         item.setRegistryName(itemName);
         item.setUnlocalizedName(item.getRegistryName().toString());
+    }
+    
+    @Override
+    public String getUnlocalizedName(ItemStack stack)
+    {
+        int metadata = stack.getMetadata();
+        EnumBasicSounds enumBasicSound = EnumBasicSounds.byMetadata(metadata);
+        return super.getUnlocalizedName() + "_" + enumBasicSound.getName();
+    }
+
+    @Override
+    public int getMetadata(int damage)
+    {
+        return damage;
+    }
+
+    @Override
+    public void getSubItems(Item itemIn, CreativeTabs tab, List<ItemStack> subItems)
+    {
+        for (EnumBasicSounds enumBasicSound : EnumBasicSounds.values())
+        {
+            ItemStack subItemStack = new ItemStack(itemIn, 1, enumBasicSound.getMetadata());
+            subItems.add(subItemStack);
+        }
+    }
+    public static enum EnumBasicSounds implements IStringSerializable
+    {
+        CLIENT_PLAYER_ONLY(0, "client_player_only"), 
+        SERVER_OTHERS(1, "server_others"), 
+        SERVER_ALL(2, "server_all");
+
+        public int getMetadata() {return this.meta;}
+
+        @Override
+        public String toString() {return this.varientName;}
+
+        public static EnumBasicSounds byMetadata(int meta)
+        {
+            if (meta < 0 || meta >= META_LOOKUP.length) {meta = 0;}
+            return META_LOOKUP[meta];
+        }
+
+        @Override
+        public String getName() {return this.varientName;}
+
+        private final int meta;
+        private final String varientName;
+
+        private static final EnumBasicSounds[] META_LOOKUP = new EnumBasicSounds[values().length];
+
+        private EnumBasicSounds(int i_meta, String i_varientName)
+        {
+            this.meta = i_meta;
+            this.varientName = i_varientName;
+        }
+
+        static
+        {
+            for (EnumBasicSounds value : values()) {META_LOOKUP[value.getMetadata()] = value;}
+        }
     }
 
 }
