@@ -21,7 +21,74 @@ src/main/resources/assets/soundsbyexample/lang/en_US.lang
 
 The items will appear in the Miscellaneous tab in the creative inventory.
 
+You can't include comments in the sounds.json file. So I've copied if here and
+added comments.
+{
+	# SoundsByExample sounds.json
+	# for more information see http://minecraft.gamepedia.com/Sounds.json
+	# The information on the wiki appears to be out of date so it's useful to
+	# review the Forge vanilla sources too.
+	
+	# This is the name of the sound resource. It must match the resource name
+	# used when registering it. Note that we don't include the modid here. 
+	# See StartupCommon.preInitCommon()
+		
+	"sbe01_sound_event_basic_sound_NAME": 
+	{
+		# "category:" "player" - corresponds to the Blocks & Items volume
+		# control accessed via vanilla options for Music & Sounds.
+		# Use the appropriate sound category for block, record, music, etc.
+		# However, category has been deprecated since 1.10+ per the wiki, and
+		# it seems to be pretty much ignored by the vanilla playSound methods, but
+		# it still seems relevant for records and music. So at this point I would
+		# continue to use it. 
+		
+		"category": "player",
+		
+		# "subtitle": "<the key in the .lang file for this sounds subtitle>"
+		# To see subtitles I suggest setting Show Subtitles to ON in the
+		# Music & Sounds options.
+		# This must match the key in the .lang file. Follow the same format as
+		# vanilla, but include the modid to keep it unique.
+			
+		"subtitle": "subtitle.item.soundsbyexample:sbe01_sound_event_basic_sound",
+		"sounds": 
+		[
+			{			
+				# The name of the OggVorbis audio file without the .ogg extension.
+				# The default location for a MODS sounds is shown below.
+				# assets/<modid>/sounds
+				
+				"name": "soundsbyexample:sbe01_sound_event_basic_sound",
+				
+				# Sound channels in Minecraft are a limited resource. The vanilla
+				# sound system can have up to 28 non-streaming sounds and 4 streaming
+				# sounds playing at the same time. This rarely happens, but it's something
+				# to be aware of. Short sounds should always have "stream" set to false.
+				# Typically these sounds will have lengths from under a second up to 2-3
+				# seconds. For longer sounds like background music and records that may last
+				# several minutes, set stream to true and make sure it is associated with
+				# the correct sound category.
+				"stream": false
+			}
+		]
+	}
+}
+
+Common errors:
+"Missing sound", "Missing texture", etc:
+These are caused when you have specified a filename or path which is not correct, typically:
+1) you've misspelled it
+2) the upper/lower case doesn't match
+3) you've forgotten the resource domain, eg "mysoundfile" instead of "soundsbyexample:mysoundfile"
+4) the folder structure of your assets folders is incorrect
+
+
 For further information:
 -Forge Documentation Sound http://mcforge.readthedocs.io/en/latest/effects/sounds/
 -Vanilla WIKI sounds.json http://minecraft.gamepedia.com/Sounds.json
 -Choonster's testmod3 ModSoundEvents.java https://github.com/Choonster/TestMod3/blob/1.10.2/src/main/java/choonster/testmod3/init/ModSoundEvents.java
+
+
+Related information:
+-11people5 "[1.9+] All /playsound Sound Arguments + sounds.json" http://www.minecraftforum.net/forums/mapping-and-modding/mapping-and-modding-tutorials/2559106-1-9-all-playsound-sound-arguments-sounds-json?comment=1

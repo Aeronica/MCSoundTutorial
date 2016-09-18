@@ -1,14 +1,14 @@
 # SoundsByExample en_US.lang
 #
 # sbe01 Basic Sound - Client Only
-item.soundsbyexample:sbe01_item_basic_sound_unlocalised_name_client_player_only.name=SBE01 Basic Sound - Client Player Only
+item.soundsbyexample:sbe01_item_basic_sound_unlocalised_name_client_player_only.name=SBE01 Basic Sound - Client: Player Only
 item.soundsbyexample:sbe01_item_basic_sound_unlocalised_name_client_player_only.tooltip=Only the player activating this item will hear a sound
-sounds.sbe01_sound_event_basic_sound.subtitle=SBE01 Basic Sound Subtitle
+subtitle.item.soundsbyexample:sbe01_sound_event_basic_sound=SBE01 Basic Sound Subtitle
 #
-item.soundsbyexample:sbe01_item_basic_sound_unlocalised_name_server_others.name=SBE01 Basic Sound - Server Others in dimension
+item.soundsbyexample:sbe01_item_basic_sound_unlocalised_name_server_others.name=SBE01 Basic Sound - Server: Others in dimension
 item.soundsbyexample:sbe01_item_basic_sound_unlocalised_name_server_others.tooltip=Others can hear the sound, but not the player
 #
-item.soundsbyexample:sbe01_item_basic_sound_unlocalised_name_server_all.name=SBE01 Basic Sound - Server All in dimension
+item.soundsbyexample:sbe01_item_basic_sound_unlocalised_name_server_all.name=SBE01 Basic Sound - Server: All in dimension
 item.soundsbyexample:sbe01_item_basic_sound_unlocalised_name_server_all.tooltip=Everyone can hear the sound
 #
 # sbe02 Mod Record

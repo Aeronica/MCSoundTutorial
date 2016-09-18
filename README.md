@@ -7,7 +7,7 @@ have not been added yet.
 
 `WIP - testing and evaluation of the example structure, code format, proper registrations, etc.`
 ## List of Examples
-  - [SBE01][01] - basic sound - some items, that when activated, emits a sound. shows client and server side usage.
+  - [SBE01][01] - basic sound - some items, that when activated, emit a sound. shows client and server side usage.
   - [SBE02][02] - mod record - a music disc that plays in the vanilla jukebox.
   - [SBE03][03] - *replace a sound - forge sound events and ISound* 
   - [SBE04][04] - *positioned sound - using the PositionedSound class*

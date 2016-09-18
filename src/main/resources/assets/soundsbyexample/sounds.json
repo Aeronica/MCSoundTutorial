@@ -1,8 +1,8 @@
-{
+{	
 	"sbe01_sound_event_basic_sound_NAME": 
 	{
-		"category": "player",
-		"subtitle": "sounds.sbe01_sound_event_basic_sound.subtitle",
+		"category": "block",
+		"subtitle": "subtitle.item.soundsbyexample:sbe01_sound_event_basic_sound",
 		"sounds": 
 		[
 			{

@@ -49,7 +49,23 @@ public class ItemBasicSound extends Item
             switch (enumBasicSound)
             {
             case CLIENT_PLAYER_ONLY:
-                /* Only the player activating this item will hear a sound */
+                /* 
+                 * Only the player activating this item will hear a sound. 
+                 * In this case the SoundCategory.PLAYERS will be used no matter what
+                 * category is specified in sounds.json file.
+                 * 
+                 * playSound(SoundEvent soundIn, float volume, float pitch)
+                 * 
+                 * The volume and pitch are set to 1F here, but those can be changed as needed.
+                 * 
+                 * volume range [0.0 - ]
+                 * Each division by 2 equals an attenuation of -6dB.
+                 * Each multiplicaton with 2 equals an amplification of +6dB.
+                 * A value of 0.0 is meaningless with respect to a logarithmic
+                 * scale; it is interpreted as zero volume.
+                 * 
+                 * pitch range [0.5 - 2.0], default 1.0.
+                 */
                 playerIn.playSound(StartupCommon.soundEventBasicSound, 1F, 1F);
                 break;
             default:
@@ -61,11 +77,18 @@ public class ItemBasicSound extends Item
             switch (EnumBasicSounds.byMetadata(itemStackIn.getItemDamage()))
             {
             case SERVER_ALL:
-                /* Plays a sound to everyone around this player including the player */
+                /*
+                 * Plays a sound to everyone around this player including the player.
+                 * Because we are using the world server playSound method we have to set the SoundCategory. 
+                 */
                 worldIn.playSound(null, playerIn.posX, playerIn.posY, playerIn.posZ, StartupCommon.soundEventBasicSound, SoundCategory.PLAYERS, 1F, 1F);
                 break;
             case SERVER_OTHERS:
-                /* Plays a sound to everyone except the player */
+                /* 
+                 * Plays a sound to everyone except the player using the EntityPlayer playSound method.
+                 * It will play using SoundCategory.PLAYERS no matter what
+                 * category is set in the sounds.json file.
+                 */
                 playerIn.playSound(StartupCommon.soundEventBasicSound, 1F, 1F);
                 break;
             default:
