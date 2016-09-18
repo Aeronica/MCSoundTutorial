@@ -26,7 +26,7 @@ public abstract class CommonProxy
     public void preInit()
     {
         // read config first
-        soundsbyexample.sbe90_configuration.StartupCommon.preInitCommon();
+//        soundsbyexample.sbe90_configuration.StartupCommon.preInitCommon();
         soundsbyexample.sbe01_basic_sound.StartupCommon.preInitCommon();
         soundsbyexample.sbe02_mod_record.StartupCommon.preInitCommon();
         soundsbyexample.sbe91_creative_tab.StartupCommon.preInitCommon();
@@ -38,7 +38,7 @@ public abstract class CommonProxy
      */
     public void init()
     {
-        soundsbyexample.sbe90_configuration.StartupCommon.initCommon();
+//        soundsbyexample.sbe90_configuration.StartupCommon.initCommon();
         soundsbyexample.sbe01_basic_sound.StartupCommon.initCommon();
         soundsbyexample.sbe02_mod_record.StartupCommon.initCommon();
         soundsbyexample.sbe91_creative_tab.StartupCommon.initCommon();
@@ -49,7 +49,7 @@ public abstract class CommonProxy
      */
     public void postInit()
     {
-        soundsbyexample.sbe90_configuration.StartupCommon.postInitCommon();
+//        soundsbyexample.sbe90_configuration.StartupCommon.postInitCommon();
         soundsbyexample.sbe01_basic_sound.StartupCommon.postInitCommon();
         soundsbyexample.sbe02_mod_record.StartupCommon.postInitCommon();
         soundsbyexample.sbe91_creative_tab.StartupCommon.postInitCommon();

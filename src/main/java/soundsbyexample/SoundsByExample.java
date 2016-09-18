@@ -14,7 +14,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 * Based on MinecraftByExample by TheGreyGhost and others
 * https://github.com/TheGreyGhost/MinecraftByExample
 */
-@Mod(modid = SoundsByExample.MODID, version = SoundsByExample.VERSION, guiFactory = SoundsByExample.GUIFACTORY)
+//@Mod(modid = SoundsByExample.MODID, version = SoundsByExample.VERSION, guiFactory = SoundsByExample.GUIFACTORY)
+@Mod(modid = SoundsByExample.MODID, version = SoundsByExample.VERSION)
 public class SoundsByExample
 {
     // you also need to update the modid and version in two other places as
@@ -22,7 +23,7 @@ public class SoundsByExample
     // build.gradle file (the version, group, and archivesBaseName parameters)
     // resources/mcmod.info (the name, description, and version parameters)
     public static final String MODID = "soundsbyexample";
-    public static final String VERSION = "0.0.0";
+    public static final String VERSION = "0.0.1";
 
     public static final String GUIFACTORY = "soundsbyexample.sbe90_configuration.SBEGuiFactory";
 
