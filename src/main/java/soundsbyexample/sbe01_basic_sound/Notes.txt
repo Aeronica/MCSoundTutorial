@@ -5,7 +5,7 @@ It will show you
 1) the location of the sounds.json file and standard location for a mods sound
    files.
 2) how to register sounds and reference them.
-3) some examples of how to play sounds. For this example an and item with
+3) some examples of how to play sounds. For this example an item with
    subtypes is used.
 4) using subtitles
 
@@ -38,10 +38,8 @@ added comments.
 		# "category:" "player" - corresponds to the Blocks & Items volume
 		# control accessed via vanilla options for Music & Sounds.
 		# Use the appropriate sound category for block, record, music, etc.
-		# However, category has been deprecated since 1.10+ per the wiki, and
-		# it seems to be pretty much ignored by the vanilla playSound methods, but
-		# it still seems relevant for records and music. So at this point I would
-		# continue to use it. 
+		# However, category has been deprecated since 1.10+ per the wiki. 
+		# XXX Checking Forge vanilla source to verify... XXX
 		
 		"category": "player",
 		

@@ -1,7 +1,6 @@
 {	
 	"sbe01_sound_event_basic_sound_NAME": 
 	{
-		"category": "block",
 		"subtitle": "subtitle.item.soundsbyexample:sbe01_sound_event_basic_sound",
 		"sounds": 
 		[
@@ -13,7 +12,6 @@
 	},
 	"record.sbe02_sound_event_mod_record_registry_name":
 	{
-		"category": "records",
 		"sounds":
 		[
 			{
