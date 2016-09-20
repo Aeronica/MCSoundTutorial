@@ -21,7 +21,7 @@ src/main/resources/assets/soundsbyexample/lang/en_US.lang
 
 The items will appear in the Miscellaneous tab in the creative inventory.
 
-You can't include comments in the sounds.json file. So I've copied if here and
+You can't include comments in the sounds.json file. So I've copied it here and
 added comments.
 {
 	# SoundsByExample sounds.json
@@ -35,14 +35,8 @@ added comments.
 		
 	"sbe01_sound_event_basic_sound_NAME": 
 	{
-		# "category:" "player" - corresponds to the Blocks & Items volume
-		# control accessed via vanilla options for Music & Sounds.
-		# Use the appropriate sound category for block, record, music, etc.
-		# However, category has been deprecated since 1.10+ per the wiki. 
-		# XXX Checking Forge vanilla source to verify... XXX
-		
-		"category": "player",
-		
+		# "category:" "<sound category name>" - is no longer used as of 1.10+
+				
 		# "subtitle": "<the key in the .lang file for this sounds subtitle>"
 		# To see subtitles I suggest setting Show Subtitles to ON in the
 		# Music & Sounds options.
