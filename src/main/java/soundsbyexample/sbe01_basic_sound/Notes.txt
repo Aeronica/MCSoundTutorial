@@ -2,11 +2,9 @@ SBE01_BASIC_SOUND
 
 The purpose of this example is to show how to register a sound and play it.
 It will show you
-1) the location of the sounds.json file and standard location for a mods sound
-   files.
+1) the location of sounds.json file and a mods sound files.
 2) how to register sounds and reference them.
-3) some examples of how to play sounds. For this example an item with
-   subtypes is used.
+3) some examples of how to play sounds.
 4) using subtitles
 
 The critical aspects, as with items and blocks, are understanding how to use a
@@ -18,13 +16,14 @@ StartupCommon
 ItemBasicSound
 src/main/resources/assets/soundsbyexample/sounds.json
 src/main/resources/assets/soundsbyexample/lang/en_US.lang
+src/main/resources/assets/soundsbyexample/sounds
 
 The items will appear in the Miscellaneous tab in the creative inventory.
 
 You can't include comments in the sounds.json file. So I've copied it here and
 added comments.
 {
-	# SoundsByExample sounds.json
+	# assets/soundsbyexample/sounds.json
 	# for more information see http://minecraft.gamepedia.com/Sounds.json
 	# The information on the wiki appears to be out of date so it's useful to
 	# review the Forge vanilla sources too.
@@ -33,7 +32,7 @@ added comments.
 	# used when registering it. Note that we don't include the modid here. 
 	# See StartupCommon.preInitCommon()
 		
-	"sbe01_sound_event_basic_sound_NAME": 
+	"sbe01_sound_event_basic_sound_name": 
 	{
 		# "category:" "<sound category name>" - is no longer used as of 1.10+
 				
@@ -47,20 +46,22 @@ added comments.
 		"sounds": 
 		[
 			{			
-				# The name of the OggVorbis audio file without the .ogg extension.
-				# The default location for a MODS sounds is shown below.
+				# The name of the OggVorbis audio file without the .ogg
+				# extension. The default location for a MODS sounds is
+				# shown below.
 				# assets/<modid>/sounds
 				
 				"name": "soundsbyexample:sbe01_sound_event_basic_sound",
 				
-				# Sound channels in Minecraft are a limited resource. The vanilla
-				# sound system can have up to 28 non-streaming sounds and 4 streaming
-				# sounds playing at the same time. This rarely happens, but it's something
-				# to be aware of. Short sounds should always have "stream" set to false.
-				# Typically these sounds will have lengths from under a second up to 2-3
-				# seconds. For longer sounds like background music and records that may last
-				# several minutes, set stream to true and make sure it is associated with
-				# the correct sound category.
+				# Sound channels in Minecraft are a limited resource. The
+				# vanilla sound system can have up to 28 non-streaming sounds
+				# and 4 streaming sounds playing at the same time. This rarely
+				# happens, but it's something to be aware of. Short sounds
+				# should always have "stream" set to false. Typically these
+				# sounds will have lengths from under a second up to 1-2
+				# seconds. For longer sounds like background music and
+				# records that may last several minutes, set stream to true.
+				# Please use sound resources responsively
 				"stream": false
 			}
 		]

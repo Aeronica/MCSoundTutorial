@@ -66,7 +66,7 @@ public class ItemBasicSound extends Item
                  * 
                  * pitch range [0.5 - 2.0], default 1.0.
                  */
-                playerIn.playSound(StartupCommon.soundEventBasicSound, 1F, 1F);
+                playerIn.playSound(StartupCommon.SOUND_EVENT_BASIC_SOUND, 1F, 1F);
                 break;
             default:
                 break;
@@ -81,7 +81,7 @@ public class ItemBasicSound extends Item
                  * Plays a sound to everyone around this player including the player.
                  * Because we are using the world server playSound method we have to set the SoundCategory. 
                  */
-                worldIn.playSound(null, playerIn.posX, playerIn.posY, playerIn.posZ, StartupCommon.soundEventBasicSound, SoundCategory.PLAYERS, 1F, 1F);
+                worldIn.playSound(null, playerIn.posX, playerIn.posY, playerIn.posZ, StartupCommon.SOUND_EVENT_BASIC_SOUND, SoundCategory.PLAYERS, 1F, 1F);
                 break;
             case SERVER_OTHERS:
                 /* 
@@ -89,7 +89,7 @@ public class ItemBasicSound extends Item
                  * It will play using SoundCategory.PLAYERS no matter what
                  * category is set in the sounds.json file.
                  */
-                playerIn.playSound(StartupCommon.soundEventBasicSound, 1F, 1F);
+                playerIn.playSound(StartupCommon.SOUND_EVENT_BASIC_SOUND, 1F, 1F);
                 break;
             default:
                 break;

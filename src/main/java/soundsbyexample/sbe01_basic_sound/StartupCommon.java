@@ -18,16 +18,15 @@ public class StartupCommon
     /*
      * The sound event must be available on the client and the server.
      *
-     * soundEventBasicSound is what we need to pass to the to any of available vanilla sound methods.
-     * One is needed for each of the sounds the MOD will add.
+     * soundEventBasicSound is what we need to pass to the to any of available vanilla sound methods
+     * that take a SoundEvent. One is needed for each of the sounds the MOD will add.
      * 
      * Another and probably better way to register SoundEvents can be seen here:
      *   Choonster's testmod3 ModSoundEvents.java
      *   https://github.com/Choonster/TestMod3/blob/1.10.2/src/main/java/choonster/testmod3/init/ModSoundEvents.java
      */
-    public static SoundEvent soundEventBasicSound;
-    
-    
+    public static SoundEvent SOUND_EVENT_BASIC_SOUND;
+        
     /* BasicSound demonstration item */
     public static ItemBasicSound itemBasicSound;
     
@@ -40,14 +39,14 @@ public class StartupCommon
          * First we set the resource location of our sound. Pass in the MODID and the NAME for the sound.
          * This NAME must match the entry for our sound in the assets/<modid>/sounds.json file.
          */
-        ResourceLocation soundID = new ResourceLocation(SoundsByExample.MODID, "sbe01_sound_event_basic_sound_NAME");
+        ResourceLocation soundID = new ResourceLocation(SoundsByExample.MODID, "sbe01_sound_event_basic_sound_name");
         /*
          * Second we register the sound using the Forge registry system. It returns a SoundEvent for this SoundID
          * which is stored in the soundEventBasicSound SoundEvent. To use the sound we can just pass it to any vanilla
          * playSound method that takes a SoundEvent.
-         *   For example: EntityPlayer - playSound(StartupCommon.soundEventBasicSound, 1F, 1F);
+         *   For example: EntityPlayer - playSound(StartupCommon.SOUND_EVENT_BASIC_SOUND, 1F, 1F);
          */
-        soundEventBasicSound = GameRegistry.register(new SoundEvent(soundID).setRegistryName(soundID));
+        SOUND_EVENT_BASIC_SOUND = GameRegistry.register(new SoundEvent(soundID).setRegistryName(soundID));
 
         /*
          * BasicSound demonstration item
