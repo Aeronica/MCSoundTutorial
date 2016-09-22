@@ -61,7 +61,7 @@ added comments.
 				# sounds will have lengths from under a second up to 1-2
 				# seconds. For longer sounds like background music and
 				# records that may last several minutes, set stream to true.
-				# Please use sound resources responsively
+				# Please use sound resources responsibly.
 				"stream": false
 			}
 		]

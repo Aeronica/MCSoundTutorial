@@ -16,10 +16,10 @@ public class StartupCommon
     /*
      *  The sound event must be available on the client and the server
      *
-     * soundEventModRecord is the handle to the SoundEvemt we need to pass to the
+     * SOUND_EVENT_MOD_RECORD is the handle to the SoundEvemt we need to pass to the
      * ItemModRecord constructor 
      */
-    public static SoundEvent soundEventModRecord;
+    public static SoundEvent SOUND_EVENT_MOD_RECORD;
     
     /*
      * ItemModRecord demonstration item
@@ -34,14 +34,14 @@ public class StartupCommon
          * First we set the resource location of our sound. This will correspond with the
          * attributes for our mods sound in the assets/<modid>/sounds.json file.
          */
-        final ResourceLocation soundID = new ResourceLocation("soundsbyexample:record.sbe02_sound_event_mod_record_registry_name");
-        soundEventModRecord = GameRegistry.register(new SoundEvent(soundID).setRegistryName(soundID));
+        final ResourceLocation soundID = new ResourceLocation("soundsbyexample", "record.sbe02_sound_event_mod_record_registry_name");
+        SOUND_EVENT_MOD_RECORD = GameRegistry.register(new SoundEvent(soundID).setRegistryName(soundID));
 
         /*
          * ItemModRecord demonstration item
          * Note: the unlocalized and registry names are set in the ItemModReoord class
          */
-        itemModRecord = (ItemModRecord)(new ItemModRecord("sbe02_item_mod_record_unlocalized_name", soundEventModRecord));
+        itemModRecord = (ItemModRecord)(new ItemModRecord("sbe02_item_mod_record_unlocalized_name", SOUND_EVENT_MOD_RECORD));
         GameRegistry.register(itemModRecord);
     }
 

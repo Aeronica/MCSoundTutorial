@@ -1,0 +1,64 @@
+SBE02_MOD_RECORD
+
+The purpose of this example is to show how add a music disc (record).
+It will show you
+1) how to register sounds and reference them.
+2) how to extend the vanilla ItemRecord to make new record.
+
+The critical aspects, as with items and blocks, are understanding how to use a
+ResourceLocation and where in the mods assets tree the sounds.json and the mods
+audio files are located.
+
+The pieces you need to understand are located in:
+StartupClient
+StartupCommon
+ItemModRecord
+src/main/resources/assets/soundsbyexample/sounds.json
+src/main/resources/assets/soundsbyexample/lang/en_US.lang
+src/main/resources/assets/soundsbyexample/sounds/records
+
+The items will appear in the Miscellaneous tab in the creative inventory.
+
+You can't include comments in the sounds.json file. So I've copied the
+relevant section here and added comments.
+{
+	# assets/soundsbyexample/sounds.json
+	# for more information see http://minecraft.gamepedia.com/Sounds.json
+	# The information on the wiki may be out of date so it's useful to
+	# review the Forge vanilla sounds.json too.
+	
+	# This is the name of the sound resource. It must match the resource name
+	# used when registering it. Note that we don't include the modid here. 
+	# See StartupCommon.preInitCommon()
+	#
+	# Vanilla prefixes the sound registry name for records with "record."
+	# As of 1.10+ the sound "category" key value pair is no longer used.
+		
+	"record.sbe02_sound_event_mod_record_registry_name":
+	{
+		"sounds":
+		[
+			{
+			"name": "soundsbyexample:records/Pachelbel's_Canon",
+			"stream": true
+			}
+		]
+	}
+}
+
+Common errors:
+"Missing sound", "Missing texture", etc:
+These are caused when you have specified a filename or path which is not correct, typically:
+1) you've misspelled it
+2) the upper/lower case doesn't match
+3) you've forgotten the resource domain, eg "mysoundfile" instead of "soundsbyexample:mysoundfile"
+4) the folder structure of your assets folders is incorrect
+
+
+For further information:
+-Forge Documentation Sound http://mcforge.readthedocs.io/en/latest/effects/sounds/
+-Vanilla WIKI sounds.json http://minecraft.gamepedia.com/Sounds.json
+-Choonster's testmod3 ModSoundEvents.java https://github.com/Choonster/TestMod3/blob/1.10.2/src/main/java/choonster/testmod3/init/ModSoundEvents.java
+
+
+Related information:
