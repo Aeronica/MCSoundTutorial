@@ -26,7 +26,7 @@ public class ItemBasicSound extends Item
 {
 
     /*
-    * The items .lang file identifiers will be in the format of:
+    * The items en_US.lang file identifiers will be in the format of:
     * item.modid:mod_item_unlocalized_name.name=Localized Item Name
     * item.modid:mod_item_unlocalized_name.tooltip=Localized Item Tooltip Description
     */
@@ -51,20 +51,18 @@ public class ItemBasicSound extends Item
             case CLIENT_PLAYER_ONLY:
                 /* 
                  * Only the player activating this item will hear a sound. 
-                 * In this case the SoundCategory.PLAYERS will be used no matter what
-                 * category is specified in sounds.json file.
                  * 
                  * playSound(SoundEvent soundIn, float volume, float pitch)
                  * 
                  * The volume and pitch are set to 1F here, but those can be changed as needed.
                  * 
-                 * volume range [0.0 - ]
+                 * volume range [0.0 - ], typical value is 1.0
                  * Each division by 2 equals an attenuation of -6dB.
                  * Each multiplicaton with 2 equals an amplification of +6dB.
                  * A value of 0.0 is meaningless with respect to a logarithmic
                  * scale; it is interpreted as zero volume.
                  * 
-                 * pitch range [0.5 - 2.0], default 1.0.
+                 * pitch range [0.5 - 2.0], use 1.0 for no change.
                  */
                 playerIn.playSound(StartupCommon.SOUND_EVENT_BASIC_SOUND, 1F, 1F);
                 break;
@@ -88,13 +86,23 @@ public class ItemBasicSound extends Item
                  * Plays a sound to everyone except the player using the EntityPlayer playSound method.
                  * It will play using SoundCategory.PLAYERS no matter what
                  * category is set in the sounds.json file.
+                 * 
+                 * Note: this is the same command that was used in the CLIENT_PLAYER_ONLY case statement.
+                 * See the next comment below.
                  */
                 playerIn.playSound(StartupCommon.SOUND_EVENT_BASIC_SOUND, 1F, 1F);
                 break;
             default:
                 break;
             }
-        }       
+        }
+        /*
+         * If we place this method here outside of the sided isRemote if-else statements it will
+         * play the sound on the client for the player, and on the server side it will send packets
+         * to all the other players near by. You will find that vanilla does sometimes.
+         * 
+         * playerIn.playSound(StartupCommon.SOUND_EVENT_BASIC_SOUND, 1F, 1F);
+         */
         return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
     }
 
@@ -141,6 +149,7 @@ public class ItemBasicSound extends Item
             subItems.add(subItemStack);
         }
     }
+    
     public static enum EnumBasicSounds implements IStringSerializable
     {
         CLIENT_PLAYER_ONLY(0, "client_player_only"), 
